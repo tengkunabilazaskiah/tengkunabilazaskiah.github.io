@@ -1,0 +1,181 @@
+/* Global Style */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Left Section */
+.left {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+}
+
+h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: Berkshire Swash;
+}
+
+p {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-family: Lato, Sans-Serif;
+}
+
+.billing-address h2 {
+    font-size: 22px;
+    color: #2980b9;
+    margin-bottom: 15px;
+    font-family: Open Sans, ;
+}
+
+.billing-address p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #34495e;
+}
+
+.track-order-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #70c6f7;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: Source Sans Pro, Sans-Serif;
+}
+
+.track-order-btn:hover {
+    background-color: #ff6f61(22, 65%, 51%);
+    transform: translateY(-2px);
+}
+
+/* Right Section */
+.right {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+
+.order-summary h2 {
+    font-size: 25px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: 'Garamond', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    background-color: #ecf0f1;
+    text-align: left;
+    font-size: 16px;
+    color: #3498db;
+}
+
+td {
+    font-size: 16px;
+    color: #555;
+    vertical-align: middle;
+}
+
+td img {
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+td input[type="text"] {
+    width: 50px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-top: 20px;
+}
+
+.payment-methods h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.payment-methods p {
+    font-size: 16px;
+}
+
+.payment-methods input[type="radio"] {
+    margin-right: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+ul li a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right {
+        margin-top: 20px;
+    }
+}

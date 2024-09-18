@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukti Pemesanan</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Bagian Kiri -->
+        <div class="left">
+            <h1>Terima Kasih atas Pesanan Anda!</h1>
+            <p>Pesanan Anda akan diproses dalam 24 jam pada hari kerja. Kami akan memberi tahu Anda melalui email setelah pesanan Anda dikirim.</p>
+
+            <div class="billing-address">
+                <h2>Informasi Pemesanan</h2>
+                <p><strong>Nama Pelayan:</strong> Sela</p>
+                <p><strong>Nama Pemesan:</strong> Nabila</p>
+                <p><strong>Alamat Pemesan:</strong> Jl. Jakarta Loa Bakung, Samarinda</p>
+                <p><strong>Tanggal Pemesanan:</strong> <input type="date" value="2024-09-18"></p>
+            </div>
+
+            <a href="#" class="track-order-btn">Lacak Pesanan Anda</a>
+        </div>
+
+        <!-- Bagian Kanan -->
+        <div class="right">
+            <div class="order-summary">
+                <h2>Ringkasan Pesanan</h2>
+                <table>
+                    <tr>
+                        <th>Nama Menu</th>
+                        <th>Jumlah</th>
+                        <th>Harga Satuan</th>
+                        <th>Total Harga</th>
+                    </tr>
+                    <tr>
+                        <td><img src="nasi-goreng.jpeg" alt="Nasi Goreng"> Nasi Goreng Spesial</td>
+                        <td align="center">1 Porsi</td>
+                        <td>Rp 25.000</td>
+                        <td>Rp 25.000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="es-teh-manis.jpeg" alt="Es Teh Manis"> Es Teh Manis</td>
+                        <td align="center">1 Gelas</td>
+                        <td>Rp 5.000</td>
+                        <td>Rp 5.000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center"><strong>Total Pesanan:</strong></td>
+                        <td>Rp 30.000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center"><strong>Pajak:</strong></td>
+                        <td>Rp 2.000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center"><strong>Total Tagihan:</strong></td>
+                        <td>Rp 32.000</td>
+                    </tr>
+                </table>
+
+                <div class="payment-methods">
+                    <h3>Metode Pembayaran</h3>
+                    <p>
+                        <input type="radio" name="payment" value="bca"> Bank BCA
+                        <input type="radio" name="payment" value="bri"> Bank BRI
+                        <input type="radio" name="payment" value="ovo"> OVO
+                        <input type="radio" name="payment" value="gopay"> GoPay
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <li>Nama: Tengku Nabila Zaskiah</li>
+        <li>NIM: 2309106104</li>
+        <li>Praktikum Web: <a href="https://classroom.google.com/c/NzEwMjM1NDMwMjIz/a/NzA2MTMwMDQ4OTg3/details">Postest 2</a></li>
+    </ul>
+</body>
+</html>
