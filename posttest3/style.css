@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffb6f9;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lamp-highlight {
+    color: #00B894;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li {
+    display: inline;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #00B894;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar.dark-mode {
+    background-color: #1e1e1e;
+}
+
+.navbar-menu a.dark-mode {
+    color: #e0e0e0;
+}
+
+.navbar-menu a.dark-mode:hover {
+    color: #00b894;
+}
+
+.hero-section.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.hero-content.dark-mode h1, .hero-content.dark-mode p {
+    color: #e0e0e0;
+}
+
+.about-container.dark-mode {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+.ticket-container.dark-mode, .form-container.dark-mode {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+footer.dark-mode {
+    background-color: #1e1e1e;
+}
+
+
+/* Toggle Switch for Dark/Light Mode */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00B894;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-image: url('foto_konser.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 123, 255, 0.5); /* Light blue with 50% transparency */
+    z-index: 0; /* Stays behind the content */
+}
+
+.hero-content {
+    max-width: 50%;
+    position: relative; /* Keeps content above the overlay */
+    z-index: 1;
+}
+
+.hero-image img {
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.cta-button {
+    background-color: #00B894;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #008F6A;
+}
+
+.hero-image img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* Tentang Saya */
+.about-container {
+    display: flex; /* Gunakan flexbox untuk layout */
+    align-items: center; /* Vertikal center */
+    justify-content: center; /* Horizontal center */
+    padding: 50px;
+    background-image: url('about_me.jpeg'); /* Menambahkan background image */
+    background-size: cover; /* Agar gambar memenuhi area */
+    background-position: center; /* Memusatkan gambar */
+    border-radius: 8px; /* Membuat sudut bulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    color: white; /* Ubah teks menjadi putih agar lebih kontras */
+}
+
+/* Mengatur styling untuk gambar profil */
+.about-image img {
+    width: 150px; /* Lebar kontainer */
+    height: 150px; /* Tinggi kontainer */
+    overflow: hidden; /* Sembunyikan bagian gambar yang keluar dari kontainer */
+    border-radius: 50%; /* Membuat kontainer berbentuk bulat */
+    margin-right: 20px; /* Memberikan jarak antara gambar dan teks */
+    display: flex; /* Menggunakan flex untuk meratakan konten */
+    justify-content: center; /* Meratakan konten secara horizontal */
+    align-items: center; /* Meratakan konten secara vertikal */
+}
+/* Mengatur styling untuk konten tentang saya */
+.about-content {
+    max-width: 600px; /* Batasi lebar konten */
+    text-align: left; /* Rata kiri untuk teks */
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #d54b4b;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #ff94b3;/* Warna teks yang diinginkan */
+    font-size: 16px; /* Ukuran font (opsional) */
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+}
+
+/* Background for Info Konser, Pemesanan Tiket, and Registrasi Pemesanan */
+.festival-section-background {
+    background-image: url('ungu.jpeg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 0px 0; /* Padding for space between sections */
+}
+
+/* info Konser */
+.concert-info-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(160, 71, 71, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    color: #333;
+    text-align: left;
+}
+
+.concert-info-section h2 {
+    color: #ff6347;
+    background-color: #ffe0b2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.concert-details {
+    background-color: #fff3e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.highlight {
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Container for the Ticket and Registration sections */
+.ticket-registration-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 30px;
+}
+
+/* Pemesanan Tiket */
+.ticket-container {
+    flex: 1;
+    background-color: #fff3e0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color:  #ff6347;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-table th, 
+.ticket-table td {
+    border: 1px solid #ff6347;
+    padding: 10px;
+    text-align: center;
+}
+
+.ticket-table th {
+    background-color: #ffe0b2;
+}
+
+.button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #c9a098;
+}
+
+/* Registrasi Pemesanan */
+.form-container {
+    flex: 1;
+    background-color: #fff3e0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input,
+.form-container select {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adjustments for the form heading */
+.form-container h3 {
+    font-size: 24px;
+    color: #ff6347;
+    background-color: #ffe0b2;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Total Harga */
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    background-color: #ffebcd;
+    color: #ff4500;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Pembayaran */
+.payment-method button,
+.form-container button {
+    width: 80%;
+    padding: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+}
+
+.payment-method button:hover,
+.form-container button:hover {
+    background-color: #e05238;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ticket-registration-container {
+        flex-direction: column;
+    }
+
+    .ticket-container, 
+    .form-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    background-image: url('bg.jpeg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    padding: 40px 0; 
+    color: white; 
+}
+
+.footer-background {
+    background-image: url('bg.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 40px 0; 
+    color: white; /* Warna teks untuk footer */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-logo h2 {
+    color: #f39c12;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.footer-container h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-container ul li {
+    margin-bottom: 10px;
+}
+
+.footer-container ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-container ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-container ul li i {
+    margin-right: 10px;
+}
+
+.footer-socials ul {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials ul li a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.footer-socials ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+    font-size: 14px;
+    color: white;
+}
