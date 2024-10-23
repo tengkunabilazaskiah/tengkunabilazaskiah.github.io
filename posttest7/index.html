@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Suka Konser </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/829fdc7544.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <span class="logo-text">Suka<span class="lamp-highlight">Konser</span></span>
+            </div>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang-saya">Tentang Saya</a></li>
+                <li><a href="#info-konser">Info Konser</a></li>
+                <li><a href="#pemesanan-tiket">Pemesanan Tiket</a></li>
+                <li><a href="#registrasi">Registrasi</a></li>
+                <li><a href="#logout" id="logout" style="display: none;">Logout</a></li>
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>            
+        </nav>
+        <!-- Formulir Pencarian -->
+    <form method="GET" action="search.php">
+        <input type="text" name="query" placeholder="Cari..." required>
+        <button type="submit">Cari</button>
+    </form>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Haii<br>Selamat Datang Di Suka Konser</h1>
+            <p>Yukk amankan tiketmu segera sebelum kehabisan!!</p>
+            <button class="cta-button">Beli Tiket</button>
+        </div>
+        <div class="hero-image">
+            <img src="suka_konser.png" alt="Suka_konser">
+        </div>
+    </section>
+
+    <div class="about-container">
+        <div class="about-image">
+            <img src="foto.jpeg" alt="Foto Profil">
+        </div>
+        <div class="about-content">
+            <h2> Tentang Saya</h2>
+            <p><strong>Nama:</strong> Bilaa</p>
+            <p><strong>Prodi:</strong> Informatika</p>
+            <p><strong>Usia:</strong> 19 Tahun</p>
+            <p><strong>Jenis Kelamin:</strong> Perempuan</p>
+            <p><strong>Asal:</strong> Bekasi Sonoan Dikit</p>
+            <p><strong>Alamat:</strong> Jl Bojong Gede Kecamatan Cibubur Kota Bekasi</p>
+            <p><strong>Hobi:</strong> Dengerin Musik, Bultang, Olahraga</p>
+            <p><strong>Status:</strong> Lagi LDR Sama Taehyung</p>
+        </div>
+    </div>    
+
+
+    <!-- Bagian Info Konser -->
+    <section class="festival-section-background">
+    <section id="info-konser" class="concert-info-section">
+        <h2>Festival Akhir Tahun - Samarinda</h2>
+        <div class="concert-details">
+            <h3>🎉 Info Konser 🎉</h3>
+            <p><i class="fa-solid fa-calendar-days"></i><strong> Tanggal:</strong> 20 Desember 2024</p>
+            <p><i class="fa-solid fa-paper-plane"></i><strong> Lokasi:</strong> Area Parkir Gor Kadrie Oening Sempaja</p>
+            <p><strong>🕖 Waktu:</strong> 19:00 WIB</p>
+            <p><strong>🌟 Guest Star:</strong> Tulus, Hindia, Dikta, Juicy Luicy, Bernadya</p>
+            <p><strong class="highlight">💵 Harga Tiket:</strong> Mulai dari Rp 50.000,-</p>
+        </div>
+    </section>
+
+    <!-- Pemesanan Tiket Konser -->
+    <!-- Pemesanan Tiket dan Registrasi Pemesanan -->
+<section class="ticket-registration-container">
+    <!-- Pemesanan Tiket -->
+    <div class="ticket-container">
+        <h2>Pemesanan Tiket Konser</h2>
+        <table class="ticket-table">
+            <thead>
+                <tr>
+                    <th>Jenis Tiket</th>
+                    <th>Harga</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>VIP</td>
+                    <td>Rp 150.000,-</td>
+                    <td><button class="button" onclick="addTicket('VIP', 150000)">Tambah</button></td>
+                </tr>
+                <tr>
+                    <td>Reguler</td>
+                    <td>Rp 50.000,-</td>
+                    <td><button class="button" onclick="addTicket('Reguler', 50000)">Tambah</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Registrasi Pemesanan -->
+    <div class="form-container">
+        <form action="create.php" method="post" enctype="multipart/form-data">
+            <h3>Registrasi Pemesanan</h3>
+            <input type="text" id="name" name="nama_lengkap" placeholder="Nama Lengkap" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="date" id="dob" name="tanggal_lahir" placeholder="Tanggal Lahir" required>
+            <input type="number" id="phone" name="nomor_telepon" placeholder="Nomor Telepon" required>
+            <select id="gender" name="gender" required>
+                <option value="">Pilih Gender</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+            <input type="file" name="file_pembayaran" placeholder="Bukti Pembayaran">
+            <div class="total-price" id="totalPrice">Total Harga: Rp 0,-</div>
+            <button class="button" type="submit" name="daftar">Bayar</button>
+        </form>
+    </div>
+</section>
+
+<!-- Login Form -->
+<section id="login" class="login-section">
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+        <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+        <button class="button" type="submit">Login</button>
+    </form>
+</section>
+
+<!-- Registrasi Form -->
+<section id="registrasi" class="register-section">
+    <h2>Registrasi</h2>
+    <form action="register.php" method="post">
+        <input type="text" id="regName" name="nama_lengkap" placeholder="Nama Lengkap" required>
+        <input type="email" id="regEmail" name="email" placeholder="Email" required>
+        <input type="password" id="regPassword" name="password" placeholder="Password" required>
+        <button class="button" type="submit">Registrasi</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>Suka<span class="lamp-highlight">Konser</span></h2>
+            <p>Selalu hadirkan pengalaman konser terbaik untuk Anda!</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Navigasi</h3>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang-saya">Tentang Saya</a></li>
+                <li><a href="#info-konser">Info Konser</a></li>
+                <li><a href="#pemesanan-tiket">Pemesanan Tiket</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Kontak</h3>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> sukakonser@gmail.com</li>
+                <li><i class="fa-solid fa-phone"></i> +62 812-3456-7890</li>
+                <li><i class="fa-solid fa-map-marker-alt"></i> Jl Sentosa No. 24, Bandung</li>
+            </ul>
+        </div>
+
+        <div class="footer-socials">
+            <h3>Ikuti Kami</h3>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 SukaKonser.Nikmati Konsermu.</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html> 
